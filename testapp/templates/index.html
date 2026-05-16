@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>M4A to MP3 Converter</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .box { border: 1px solid #ccc; padding: 20px; display: inline-block; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>M4AをMP3に変換</h1>
+        
+        <!-- action="/" で自分自身(Flaskのindex関数)にデータを送る -->
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".m4a" required>
+            <br><br>
+            <button type="submit">変換してダウンロード</button>
+        </form>
+    </div>
+</body>
+</html>
