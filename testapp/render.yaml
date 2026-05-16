@@ -1,9 +1,11 @@
 services:
   - type: web
-    name: m4a-to-mp3-converter # アプリ名（自由に変えてOK）
-    runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app # app.pyの「app」を呼び出す設定
-    envVars:
-      - key: PYTHON_VERSION
+    name: flask-mp3-converter
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      apt-get update
+      apt-get install -y ffmpeg
+    startCommand: gunicorn app:app
+  - key: PYTHON_VERSION
         value: 3.12.10 # 使用したいPythonのバージョン
